@@ -9,29 +9,13 @@ let contract;
 let accountId;
 
 beforeAll(async function() {
-  near = await nearlib.connect(nearConfig);
-  accountId = nearConfig.contractName;
-  contract = await near.loadContract(nearConfig.contractName, {
-    viewMethods: ['getMessages'],
-    changeMethods: ['addMessage'],
-    sender: accountId
-  });
+  //Insert Code Here
 });
 
 it('send one message and retrieve it', async() => {
-  await contract.addMessage({ text: 'aloha' });
-  const msgs = await contract.getMessages();
-  const expectedMessagesResult = [{
-    premium: false,
-    sender: accountId,
-    text: 'aloha'
-  }];
-  expect(msgs).toEqual(expectedMessagesResult);
+  //Insert Code Here
 });
 
 it('send two more messages and expect three total', async() => {
-  await contract.addMessage({ text: 'foo' });
-  await contract.addMessage({ text: 'bar' });
-  const msgs = await contract.getMessages();
-  expect(msgs.length).toEqual(3);
+  //Insert Code Here
 });

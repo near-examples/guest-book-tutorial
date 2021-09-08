@@ -5,12 +5,7 @@ import { context, u128, PersistentVector } from "near-sdk-as";
  */
 @nearBindgen
 export class PostedMessage {
-  premium: boolean;
-  sender: string;
-  constructor(public text: string) {
-    this.premium = context.attachedDeposit >= u128.from('10000000000000000000000');
-    this.sender = context.sender;
-  }
+  //Insert Code Here
 }
 /**
  * collections.vector is a persistent collection. Any changes to it will

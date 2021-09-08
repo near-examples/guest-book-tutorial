@@ -13,61 +13,24 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    // TODO: don't just fetch once; subscribe!
-    contract.getMessages().then(setMessages);
+    //Insert Code Here
   }, []);
 
   const onSubmit = (e) => {
-    e.preventDefault();
-
-    const { fieldset, message, donation } = e.target.elements;
-
-    fieldset.disabled = true;
-
-    // TODO: optimistically update page with new message,
-    // update blockchain data in background
-    // add uuid to each message, so we know which one is already known
-    contract.addMessage(
-      { text: message.value },
-      BOATLOAD_OF_GAS,
-      Big(donation.value || '0').times(10 ** 24).toFixed()
-    ).then(() => {
-      contract.getMessages().then(messages => {
-        setMessages(messages);
-        message.value = '';
-        donation.value = SUGGESTED_DONATION;
-        fieldset.disabled = false;
-        message.focus();
-      });
-    });
+    //Insert Code Here
   };
 
   const signIn = () => {
-    wallet.requestSignIn(
-      nearConfig.contractName,
-      'NEAR Guest Book'
-    );
+    //Insert Code Here
   };
 
   const signOut = () => {
-    wallet.signOut();
-    window.location.replace(window.location.origin + window.location.pathname);
+    //Insert Code Here
   };
 
   return (
     <main>
-      <header>
-        <h1>NEAR Guest Book</h1>
-        { currentUser
-          ? <button onClick={signOut}>Log out</button>
-          : <button onClick={signIn}>Log in</button>
-        }
-      </header>
-      { currentUser
-        ? <Form onSubmit={onSubmit} currentUser={currentUser} />
-        : <SignIn/>
-      }
-      { !!currentUser && !!messages.length && <Messages messages={messages}/> }
+      {/* Insert Code Here */}
     </main>
   );
 };

@@ -1,7 +1,5 @@
 import { PostedMessage, messages } from './model';
 
-// --- contract code goes below
-
 // The maximum number of latest messages the contract returns.
 const MESSAGE_LIMIT = 10;
 
@@ -11,10 +9,7 @@ const MESSAGE_LIMIT = 10;
  * But right now we don't distinguish them with annotations yet.
  */
 export function addMessage(text: string): void {
-  // Creating a new message and populating fields with our data
-  const message = new PostedMessage(text);
-  // Adding the message to end of the the persistent collection
-  messages.push(message);
+  //Insert Code Here
 }
 
 /**
@@ -22,11 +17,6 @@ export function addMessage(text: string): void {
  * NOTE: This is a view method. Which means it should NOT modify the state.
  */
 export function getMessages(): PostedMessage[] {
-  const numMessages = min(MESSAGE_LIMIT, messages.length);
-  const startIndex = messages.length - numMessages;
-  const result = new Array<PostedMessage>(numMessages);
-  for(let i = 0; i < numMessages; i++) {
-    result[i] = messages[i + startIndex];
-  }
-  return result;
+  //Insert Code Here
+  return new Array<PostedMessage>();
 }
